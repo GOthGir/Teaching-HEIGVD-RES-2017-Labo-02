@@ -6,20 +6,22 @@ import ch.heigvd.schoolpulse.TestAuthor;
 import java.io.IOException;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 
 /**
  * This class contains automated tests to validate the client and the server
  * implementation of the Roulette Protocol (version 1)
- * 
+ *
  * @author Olivier Liechti
  */
+@Ignore
 public class RouletteV1WasadigiTest {
 
   @Rule
   public ExpectedException exception = ExpectedException.none();
-  
+
   @Rule
   public EphemeralClientServerPair roulettePair = new EphemeralClientServerPair(RouletteV1Protocol.VERSION);
 
@@ -44,7 +46,7 @@ public class RouletteV1WasadigiTest {
     client.connect("localhost", port);
     assertTrue(client.isConnected());
   }
-  
+
   @Test
   @TestAuthor(githubId = "wasadigi")
   public void theServerShouldReturnTheCorrectVersionNumber() throws IOException {
@@ -87,5 +89,5 @@ public class RouletteV1WasadigiTest {
     exception.expect(EmptyStoreException.class);
     client.pickRandomStudent();
   }
-  
+
 }

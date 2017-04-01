@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 language: java
 script: sh -c 'cd QuizRouletteServer-build && mvn clean test'
+=======
+language: java
+script: sh -c 'cd QuizRouletteServer-build && mvn clean test'
+>>>>>>> master
